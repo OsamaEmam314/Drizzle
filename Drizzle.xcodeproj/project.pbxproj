@@ -26,6 +26,8 @@
 		186407BF2FE5A8CA009C1AAD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186407BE2FE5A8CA009C1AAD /* CoreDataStack.swift */; };
 		186407C12FE5ABA5009C1AAD /* WeatherDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186407C02FE5ABA5009C1AAD /* WeatherDTO.swift */; };
 		186407C32FE5AF09009C1AAD /* RemoteWeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186407C22FE5AF09009C1AAD /* RemoteWeatherDataSource.swift */; };
+		186407C52FE5B24B009C1AAD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186407C42FE5B24B009C1AAD /* Extensions.swift */; };
+		186407C72FE5B2E2009C1AAD /* TimeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186407C62FE5B2E2009C1AAD /* TimeHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		186407BE2FE5A8CA009C1AAD /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		186407C02FE5ABA5009C1AAD /* WeatherDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDTO.swift; sourceTree = "<group>"; };
 		186407C22FE5AF09009C1AAD /* RemoteWeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteWeatherDataSource.swift; sourceTree = "<group>"; };
+		186407C42FE5B24B009C1AAD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		186407C62FE5B2E2009C1AAD /* TimeHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +279,8 @@
 		186407B12FE583DC009C1AAD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				186407C42FE5B24B009C1AAD /* Extensions.swift */,
+				186407C62FE5B2E2009C1AAD /* TimeHelpers.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -425,9 +431,11 @@
 				1864076E2FE573FF009C1AAD /* SceneDelegate.swift in Sources */,
 				186407BF2FE5A8CA009C1AAD /* CoreDataStack.swift in Sources */,
 				186407702FE573FF009C1AAD /* ContentView.swift in Sources */,
+				186407C52FE5B24B009C1AAD /* Extensions.swift in Sources */,
 				186407BB2FE5A3AE009C1AAD /* FetchRecentSearchesUseCase.swift in Sources */,
 				186407B32FE59EE7009C1AAD /* Weather.swift in Sources */,
 				186407C12FE5ABA5009C1AAD /* WeatherDTO.swift in Sources */,
+				186407C72FE5B2E2009C1AAD /* TimeHelpers.swift in Sources */,
 				186407B72FE5A2A1009C1AAD /* FetchWeatherUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
