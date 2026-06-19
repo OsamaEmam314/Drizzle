@@ -8,13 +8,6 @@
 import Foundation
 import SwiftUI
 
-extension URL {
-    init?(safeString: String) {
-        let fixed = safeString.hasPrefix("http") ? safeString : "https:" + safeString
-        self.init(string: fixed)
-    }
-}
-
 extension View {
     func backgroundWithTimeBasedImage() -> some View {
         let imageName = TimeHelpers.backgroundImageName()
