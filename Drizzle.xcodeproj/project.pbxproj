@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		1864077B2FE57400009C1AAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186407792FE57400009C1AAD /* LaunchScreen.storyboard */; };
 		186407862FE57400009C1AAD /* DrizzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186407852FE57400009C1AAD /* DrizzleTests.swift */; };
 		186407912FE57400009C1AAD /* DrizzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186407902FE57400009C1AAD /* DrizzleUITests.swift */; };
+		186407A02FE57EC2009C1AAD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1864079F2FE57EC2009C1AAD /* Alamofire */; };
+		186407A32FE58130009C1AAD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 186407A22FE58130009C1AAD /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186407A32FE58130009C1AAD /* Kingfisher in Frameworks */,
+				186407A02FE57EC2009C1AAD /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +105,11 @@
 		1864076A2FE573FF009C1AAD /* Drizzle */ = {
 			isa = PBXGroup;
 			children = (
+				186407B12FE583DC009C1AAD /* Utils */,
+				186407A72FE58315009C1AAD /* App */,
+				186407A62FE58239009C1AAD /* Presentation */,
+				186407A52FE5822F009C1AAD /* Data */,
+				186407A42FE5819E009C1AAD /* Domain */,
 				1864076B2FE573FF009C1AAD /* AppDelegate.swift */,
 				1864076D2FE573FF009C1AAD /* SceneDelegate.swift */,
 				1864076F2FE573FF009C1AAD /* ContentView.swift */,
@@ -139,6 +148,113 @@
 			path = DrizzleUITests;
 			sourceTree = "<group>";
 		};
+		186407A42FE5819E009C1AAD /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				186407AA2FE5833F009C1AAD /* Protocols */,
+				186407A92FE58333009C1AAD /* UseCases */,
+				186407A82FE58328009C1AAD /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		186407A52FE5822F009C1AAD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				186407AE2FE58398009C1AAD /* CoreData */,
+				186407AD2FE58389009C1AAD /* DTO */,
+				186407AC2FE58365009C1AAD /* DataSources */,
+				186407AB2FE58357009C1AAD /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		186407A62FE58239009C1AAD /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				186407B02FE583C2009C1AAD /* ViewModels */,
+				186407AF2FE583B7009C1AAD /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		186407A72FE58315009C1AAD /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		186407A82FE58328009C1AAD /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		186407A92FE58333009C1AAD /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		186407AA2FE5833F009C1AAD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		186407AB2FE58357009C1AAD /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		186407AC2FE58365009C1AAD /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		186407AD2FE58389009C1AAD /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		186407AE2FE58398009C1AAD /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		186407AF2FE583B7009C1AAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		186407B02FE583C2009C1AAD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		186407B12FE583DC009C1AAD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,6 +271,10 @@
 			dependencies = (
 			);
 			name = Drizzle;
+			packageProductDependencies = (
+				1864079F2FE57EC2009C1AAD /* Alamofire */,
+				186407A22FE58130009C1AAD /* Kingfisher */,
+			);
 			productName = Drizzle;
 			productReference = 186407682FE573FF009C1AAD /* Drizzle.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +346,10 @@
 				Base,
 			);
 			mainGroup = 1864075F2FE573FF009C1AAD;
+			packageReferences = (
+				1864079E2FE57EC2009C1AAD /* XCRemoteSwiftPackageReference "Alamofire" */,
+				186407A12FE58130009C1AAD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 186407692FE573FF009C1AAD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -595,6 +719,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1864079E2FE57EC2009C1AAD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.4;
+			};
+		};
+		186407A12FE58130009C1AAD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = exactVersion;
+				version = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1864079F2FE57EC2009C1AAD /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1864079E2FE57EC2009C1AAD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		186407A22FE58130009C1AAD /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 186407A12FE58130009C1AAD /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		186407712FE573FF009C1AAD /* Drizzle.xcdatamodeld */ = {
