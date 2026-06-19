@@ -25,6 +25,8 @@
 		186407BB2FE5A3AE009C1AAD /* FetchRecentSearchesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186407BA2FE5A3AE009C1AAD /* FetchRecentSearchesUseCase.swift */; };
 		186407BD2FE5A534009C1AAD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186407BC2FE5A534009C1AAD /* Extensions.swift */; };
 		186407BF2FE5A8CA009C1AAD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186407BE2FE5A8CA009C1AAD /* CoreDataStack.swift */; };
+		186407C12FE5ABA5009C1AAD /* WeatherDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186407C02FE5ABA5009C1AAD /* WeatherDTO.swift */; };
+		186407C32FE5AF09009C1AAD /* RemoteWeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186407C22FE5AF09009C1AAD /* RemoteWeatherDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		186407BA2FE5A3AE009C1AAD /* FetchRecentSearchesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRecentSearchesUseCase.swift; sourceTree = "<group>"; };
 		186407BC2FE5A534009C1AAD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		186407BE2FE5A8CA009C1AAD /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		186407C02FE5ABA5009C1AAD /* WeatherDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDTO.swift; sourceTree = "<group>"; };
+		186407C22FE5AF09009C1AAD /* RemoteWeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteWeatherDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +239,7 @@
 		186407AC2FE58365009C1AAD /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				186407C22FE5AF09009C1AAD /* RemoteWeatherDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 		186407AD2FE58389009C1AAD /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				186407C02FE5ABA5009C1AAD /* WeatherDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -416,6 +422,7 @@
 			files = (
 				186407B92FE5A36B009C1AAD /* SaveSearchUseCase.swift in Sources */,
 				186407732FE573FF009C1AAD /* Drizzle.xcdatamodeld in Sources */,
+				186407C32FE5AF09009C1AAD /* RemoteWeatherDataSource.swift in Sources */,
 				1864076C2FE573FF009C1AAD /* AppDelegate.swift in Sources */,
 				186407B52FE5A175009C1AAD /* WeatherRepositoryProtocol.swift in Sources */,
 				1864076E2FE573FF009C1AAD /* SceneDelegate.swift in Sources */,
@@ -424,6 +431,7 @@
 				186407702FE573FF009C1AAD /* ContentView.swift in Sources */,
 				186407BB2FE5A3AE009C1AAD /* FetchRecentSearchesUseCase.swift in Sources */,
 				186407B32FE59EE7009C1AAD /* Weather.swift in Sources */,
+				186407C12FE5ABA5009C1AAD /* WeatherDTO.swift in Sources */,
 				186407B72FE5A2A1009C1AAD /* FetchWeatherUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
