@@ -5,7 +5,6 @@
 //  Created by Osama Khaled on 20/06/2026.
 //
 
-import Foundation
 import SwiftUI
 import Combine
 
@@ -18,16 +17,10 @@ class CitySearchViewModel: ObservableObject {
 
     init(searchCitiesUseCase: SearchCitiesUseCase) {
         self.searchCitiesUseCase = searchCitiesUseCase
-        setupSearch()
-    }
-
-    private func setupSearch() {
         $searchText
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .removeDuplicates()
-            .flatMap { query in
-                self.searchCitiesUseCase.execute(query: query)
-            }
+            .flatMap { self.searchCitiesUseCase.execute(query: $0) }
             .assign(to: &$filteredCities)
     }
 }

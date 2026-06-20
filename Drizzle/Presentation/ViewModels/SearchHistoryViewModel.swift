@@ -5,7 +5,6 @@
 //  Created by Osama Khaled on 20/06/2026.
 //
 
-import Foundation
 import SwiftUI
 import Combine
 
@@ -29,7 +28,5 @@ class SearchHistoryViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
-    func refresh() {
-        loadHistory()
-    }
+    func refresh() { loadHistory() }
 }
