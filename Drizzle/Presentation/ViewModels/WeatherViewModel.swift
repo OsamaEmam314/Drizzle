@@ -4,8 +4,6 @@
 //
 //  Created by Osama Khaled on 20/06/2026.
 //
-
-import Foundation
 import SwiftUI
 import Combine
 
@@ -25,9 +23,9 @@ class WeatherViewModel: ObservableObject {
         self.saveSearchUseCase = saveSearchUseCase
     }
 
-    func search() {
+    func search(city: String) {
+        self.city = city
         guard !city.trimmingCharacters(in: .whitespaces).isEmpty else { return }
-
         isLoading = true
         errorMessage = nil
 
