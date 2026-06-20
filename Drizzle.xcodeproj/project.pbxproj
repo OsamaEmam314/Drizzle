@@ -150,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				186407B12FE583DC009C1AAD /* Utils */,
-				186407A72FE58315009C1AAD /* App */,
 				186407A62FE58239009C1AAD /* Presentation */,
 				186407A52FE5822F009C1AAD /* Data */,
 				186407A42FE5819E009C1AAD /* Domain */,
@@ -221,13 +220,6 @@
 				186407AF2FE583B7009C1AAD /* Views */,
 			);
 			path = Presentation;
-			sourceTree = "<group>";
-		};
-		186407A72FE58315009C1AAD /* App */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 		186407A82FE58328009C1AAD /* Entities */ = {
