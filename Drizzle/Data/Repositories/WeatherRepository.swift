@@ -1,14 +1,7 @@
-//
-//  WeatherRepository.swift
-//  Drizzle
-//
-//  Created by Osama Khaled on 19/06/2026.
-//
-
-import Foundation
 import Combine
+import Foundation
 
-class WeatherRepository: WeatherRepositoryProtocol{
+class WeatherRepository: WeatherRepositoryProtocol {
     private let remoteDataSource: RemoteWeatherDataSource
     private let localDataSource: LocalSearchDataSource
 
@@ -17,7 +10,7 @@ class WeatherRepository: WeatherRepositoryProtocol{
         self.remoteDataSource = remoteDataSource
         self.localDataSource = localDataSource
     }
-    
+
     func fetchWeather(for city: String) -> AnyPublisher<Weather, Error> {
         return remoteDataSource.fetchWeather(for: city)
             .map { response -> Weather in
@@ -36,7 +29,7 @@ class WeatherRepository: WeatherRepositoryProtocol{
                     let iconURL = URL(string: "https:" + dto.day.condition.icon)
 
                     let hours = dto.hour.map { hourDTO -> HourlyForecast in
-                        let time = Self.dateFromString(hourDTO.time) ?? Date()
+                        let time = Self.dateFromFullString(hourDTO.time) ?? Date()
                         let iconURL = URL(string: "https:" + hourDTO.condition.icon)
                         return HourlyForecast(
                             time: time,
@@ -60,19 +53,21 @@ class WeatherRepository: WeatherRepositoryProtocol{
             }
             .eraseToAnyPublisher()
     }
-    
+
     private static func dateFromString(_ string: String) -> Date? {
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter.date(from: string)
     }
 
     private static func dateFromFullString(_ string: String) -> Date? {
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
         return formatter.date(from: string)
     }
-    
+
     func saveSearch(city: String) -> AnyPublisher<Void, Error> {
         return localDataSource.saveSearch(city: city)
     }
@@ -80,5 +75,4 @@ class WeatherRepository: WeatherRepositoryProtocol{
     func fetchRecentSearches() -> AnyPublisher<[String], Error> {
         return localDataSource.fetchRecentSearches()
     }
-
 }

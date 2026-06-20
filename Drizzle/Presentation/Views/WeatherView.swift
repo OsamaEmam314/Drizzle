@@ -84,18 +84,26 @@ struct WeatherView: View {
     }
 }
 
-
 struct BackgroundView: View {
     let isMorning: Bool
     var body: some View {
         if isMorning {
-            LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.3), Color.white]),
-                           startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
+            LinearGradient(
+                gradient: Gradient(colors: [Color.blue.opacity(0.25), Color.white]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
         } else {
-            LinearGradient(gradient: Gradient(colors: [Color.black, Color.gray.opacity(0.6)]),
-                           startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(red: 0.15, green: 0.05, blue: 0.25),
+                    Color(red: 0.05, green: 0.05, blue: 0.20)
+                ]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
         }
     }
 }
@@ -159,6 +167,7 @@ struct CitySearchResultsView: View {
         .frame(height: min(CGFloat(cities.count * 44), 200))
     }
 }
+
 struct RecentSearchesView: View {
     let recentSearches: [String]
     let textColor: Color
@@ -231,7 +240,7 @@ struct CurrentWeatherSection: View {
                     .frame(width: 64, height: 64)
             }
 
-            Text("\(weather.current.temperatureCelsius, specifier: "%.1f")°C")
+            Text("\(weather.current.temperatureCelsius, specifier: "%.0f")°C")
                 .font(.system(size: 48, weight: .thin))
                 .foregroundColor(textColor)
 
@@ -241,9 +250,9 @@ struct CurrentWeatherSection: View {
 
             if let today = weather.forecast.first {
                 HStack {
-                    Text("↑ \(today.maxTempC, specifier: "%.1f")°")
-                        .foregroundColor(.orange)
-                    Text("↓ \(today.minTempC, specifier: "%.1f")°")
+                    Text("↑ \(today.maxTempC, specifier: "%.0f")°")
+                        .foregroundColor(.red)
+                    Text("↓ \(today.minTempC, specifier: "%.0f")°")
                         .foregroundColor(.blue)
                 }
                 .font(.subheadline)
@@ -296,7 +305,7 @@ struct MetricsSection: View {
         HStack(spacing: 16) {
             MetricView(label: "Visibility", value: String(format: "%.1f km", visibility), textColor: textColor)
             MetricView(label: "Humidity", value: "\(humidity)%", textColor: textColor)
-            MetricView(label: "Feels Like", value: String(format: "%.1f°", feelsLike), textColor: textColor)
+            MetricView(label: "Feels Like", value: String(format: "%.0f°", feelsLike), textColor: textColor)
             MetricView(label: "Pressure", value: String(format: "%.1f mb", pressure), textColor: textColor)
         }
         .padding()
@@ -345,12 +354,12 @@ struct ForecastRow: View {
             Spacer()
 
             HStack(spacing: 8) {
-                Text("\(day.minTempC, specifier: "%.1f")°")
+                Text("\(day.minTempC, specifier: "%.0f")°")
                     .foregroundColor(.blue)
                 Text("-")
                     .foregroundColor(textColor)
-                Text("\(day.maxTempC, specifier: "%.1f")°")
-                    .foregroundColor(.orange)     
+                Text("\(day.maxTempC, specifier: "%.0f")°")
+                    .foregroundColor(.red)
             }
             .font(.subheadline)
         }
